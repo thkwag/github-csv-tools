@@ -130,6 +130,9 @@ const exportIssues = (octokit, values, includeComments = false) => {
         if (values.exportFileName) {
           fileName = values.exportFileName;
         }
+
+        var BOM = "\uFEFF";
+        csvString = BOM + csvString;
         fs.writeFile(fileName, csvString, "utf8", function (err) {
           if (err) {
             console.error("error writing csv!");

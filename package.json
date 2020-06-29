@@ -4,10 +4,10 @@
   "description": "Tools to import and export, via CSV, from GitHub.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/eslint *.js"
+    "test": "eslint *.js"
   },
   "bin": {
-    "githubCsvTools": "./index.js"
+    "githubCsvTools": "index.js"
   },
   "keywords": [
     "github",
@@ -15,7 +15,10 @@
     "import",
     "export"
   ],
-  "repository": "https://github.com/gavinr/github-csv-tools.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavinr/github-csv-tools.git"
+  },
   "author": "Gavin Rehkemper <gavin@gavinr.com> (http://gavinr.com/)",
   "license": "MIT",
   "funding": {
@@ -39,5 +42,13 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-config-prettier": "^6.10.1"
+  },
+  "bugs": {
+    "url": "https://github.com/gavinr/github-csv-tools/issues"
+  },
+  "homepage": "https://github.com/gavinr/github-csv-tools#readme",
+  "directories": {
+    "example": "example",
+    "test": "test"
   }
 }

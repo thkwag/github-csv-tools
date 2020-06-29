@@ -30,6 +30,14 @@ program
     "Comma-separated list of attributes (columns) in the export."
   )
   .option("-c, --exportComments", "Include comments in the export.")
+  .option(
+    "-u, --user [attributes]",
+    "Github user or organization"
+  )
+  .option(
+    "-r, --repo [attributes]",
+    "Github repository"
+  )
   .action(function (file, options) {
     co(function* () {
       var retObject = {};
@@ -49,8 +57,17 @@ program
           .map((i) => i.trim());
       }
       retObject.exportComments = options.exportComments || false;
-      retObject.userOrOrganization = yield prompt("user or organization: ");
-      retObject.repo = yield prompt("repo: ");
+
+      retObject.userOrOrganization = options.user || false;
+      if (retObject.userOrOrganization === "") {
+        retObject.userOrOrganization = yield prompt("user or organization: ");
+      }
+
+      retObject.repo = options.repo || false;
+      if (retObject.repo === "") {
+        retObject.repo = yield prompt("repo: ");
+      }
+      
       return retObject;
     }).then(
       function (values) {

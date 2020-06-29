@@ -1,8 +1,18 @@
 # GitHub CSV Tools [![Build Status](https://travis-ci.org/gavinr/github-csv-tools.svg?branch=master)](https://travis-ci.org/gavinr/github-csv-tools)
 Import and export GitHub issues via CSV
 
-## Usage
+## Fork Changes
+1. Fix for UTF-8 CSV BOM(Byte Order Mark)
+2. Options Added
+    ```
+    -u, --userOrOrganization
+    Github user or organization (fork changes)
 
+    -r, --repository
+    Github repository (fork changes)
+    ```
+
+## Usage
 
 Prerequisite: [Install Node.js](https://nodejs.org/en/), then run this to install:
 
@@ -47,12 +57,16 @@ For all actions, the tool will ask you to input a GitHub token. To obtain this t
 
 ## Other Options
 
-| Option                  | Notes                                                |
-| ----------------------- | ---------------------------------------------------- |
-| -V, --version           | output the version number                            |
-| -g, --github_enterprise | Your GitHub Enterprise URL.                          |
-| -t, --token             | The GitHub token. https://github.com/settings/tokens |
-| -h, --help              | See all the options and help.                        |
+| Option                   | Notes                                                |
+| ------------------------ | ---------------------------------------------------- |
+| -V, --version            | output the version number                            |
+| -g, --github_enterprise  | Your GitHub Enterprise URL.                          |
+| -t, --token              | The GitHub token. https://github.com/settings/tokens |
+| -h, --help               | See all the options and help.                        |
+| -u, --userOrOrganization | Github user or organization (fork changes)           |
+| -r, --repository         | Github repository (fork changes)                     |
+
+
 
 ## Development
 
